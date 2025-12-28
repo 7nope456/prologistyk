@@ -1,20 +1,207 @@
-name: Jekyll site CI
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Węzły logistyczne Niemiec</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background: #111827;
+      color: #e5e7eb;
+    }
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+    }
+    header {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2.4rem;
+    }
+    header p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+    nav {
+      background: #ffffff;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #2a5298;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0;
+    }
+    }
+    section h2 {
+      color: #1e3c72;
+      margin-bottom: 15px;
+      border-left: 5px solid #2a5298;
+      padding-left: 10px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    footer {
+      background: #1e3c72;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+<header>
+  <h1>Węzły logistyczne Niemiec</h1>
+  <p>
+    Aniela Bryszewska · Sandra Bartoszewska · Bartek Fandysz · Daria Blaszke
+  </p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Germany_transport_map.png" alt="Mapa transportowa Niemiec" style="max-width:90%; margin-top:20px; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.25);">
+</header>
 
-jobs:
-  build:
+<nav>
+  <a href="#logistyka">Logistyka</a>
+  <a href="#dlaczego">Dlaczego Niemcy?</a>
+  <a href="#transport">Transport</a>
+  <a href="#wezly">Węzły logistyczne</a>
+  <a href="#przyszlosc">Przyszłość</a>
+</nav>
 
-    runs-on: ubuntu-latest
+<section id="logistyka" class="slide">
+  <h2>Slajd 1: Czym jest logistyka?</h2>
+  <div class="card">
+    <p>
+      Logistyka to proces planowania, organizowania i kontrolowania przepływu towarów,
+      surowców oraz informacji od producenta do odbiorcy.
+    </p>
+    <p>
+      Obejmuje transport, magazynowanie, dystrybucję oraz zarządzanie łańcuchem dostaw.
+    </p>
+  </div>
+</section>
 
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+<section id="dlaczego" class="slide">
+  <h2>Slajd 2: Dlaczego Niemcy są krajem logistycznym?</h2>
+  <div class="card">
+    <ul>
+      <li>Położenie w centrum Europy</li>
+      <li>Rozwinięta infrastruktura transportowa</li>
+      <li>Największa gospodarka UE</li>
+      <li>Silny przemysł eksportowy</li>
+      <li>Globalne firmy logistyczne</li>
+    </ul>
+  </div>
+</section>
+
+<section id="transport" class="slide">
+  <h2>Slajd 3: Rodzaje transportu w Niemczech</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🚛 Drogowy</h3>
+      <p>Elastyczny i najszybszy w dystrybucji krajowej.</p>
+    </div>
+    <div class="card">
+      <h3>🚆 Kolejowy</h3>
+      <p>Ekologiczny transport dużych ładunków.</p>
+    </div>
+    <div class="card">
+      <h3>🚢 Wodny</h3>
+      <p>Tani przewóz surowców masowych.</p>
+    </div>
+    <div class="card">
+      <h3>✈️ Lotniczy</h3>
+      <p>Szybkie przesyłki o wysokiej wartości.</p>
+    </div>
+  </div>
+</section>
+
+<section id="wezly">
+  <h2>Najważniejsze węzły logistyczne</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Hamburg_port.jpg" alt="Port Hamburg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>Hamburg</h3>
+      <p>Największy port morski Niemiec i jeden z największych w Europie.</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Duisburg_inner_harbour.jpg" alt="Port Duisburg" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>Duisburg</h3>
+      <p>Największy port rzeczny świata, ważny punkt Nowego Jedwabnego Szlaku.</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Frankfurt_Airport_Aerial.jpg" alt="Lotnisko Frankfurt" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>Frankfurt nad Menem</h3>
+      <p>Największy hub lotniczy i ważne centrum drogowo-kolejowe.</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Leipzig_Halle_Airport_cargo.jpg" alt="Lotnisko Leipzig Halle" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>Leipzig/Halle</h3>
+      <p>Główna europejska baza DHL Express, działająca 24/7.</p>
+    </div>
+  </div>
+</section>
+
+<section id="przyszlosc" class="slide">
+  <h2>Slajd końcowy: Przyszłość logistyki</h2>
+  <div class="card">
+    <p>
+      Przyszłość logistyki w Niemczech opiera się na automatyzacji,
+      cyfryzacji i zrównoważonym rozwoju.
+    </p>
+    <p>
+      Transport intermodalny i zielona logistyka będą kluczowe.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>
+    Niemcy to europejski lider w logistyce – wzór organizacji transportu i zarządzania
+    łańcuchem dostaw.
+  </p>
+  <p>Dziękujemy za uwagę.</p>
+</footer>
+
+</body>
+</html>
